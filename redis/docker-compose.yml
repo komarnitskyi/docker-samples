@@ -1,0 +1,10 @@
+version: '4'
+services:
+  ## Redis Container
+  redis:
+    build:
+      args:
+        - REDIS_REPLICATION_MODE=${REDIS_REPLICATION_MODE}
+        - REDIS_PASSWORD=${REDIS_PASSWORD}
+    ports:
+      - "${REDIS_PORT}:6379"

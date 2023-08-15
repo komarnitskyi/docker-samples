@@ -1,0 +1,12 @@
+version: '4'
+services:
+  ## MongoDB Replica set 
+  mongodbreplicaset:
+    build:
+      args:
+        - MONGO_INITDB_ROOT_USERNAME=${MONGO_REPLICA_SET_USER}
+        - MONGO_INITDB_ROOT_PASSWORD=${MONGO_REPLICA_SET_PASSWORD}
+        - MONGO_REPLICA_HOST=mongodb
+        - MONGO_REPLICA_PORT=${MONGO_REPLICA_SET_PORT}
+    ports:
+      - '${MONGO_REPLICA_SET_PORT}:${MONGO_REPLICA_SET_PORT}'
